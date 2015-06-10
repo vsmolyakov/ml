@@ -7,7 +7,7 @@ clear all; close all;
 
 %% generate data
 rng(1);
-data = loadData('letterA'); %128 x 128
+data = load('letterA.mat'); %128 x 128
 img = double(data.A); %figure; imshow(data.A)
 img_mean = mean(img(:));
 img2 = +1*(img>img_mean) + -1*(img<img_mean); % x_i \in {+1,-1}

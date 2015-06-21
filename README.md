@@ -9,6 +9,7 @@ gibbs_gauss_script.m: A Gibbs Sampler for Multivariate Gaussian
 imp_samp.m: Importance Sampler Example  
 box_muller.m: Sampling Method for Mutlivariate Gaussians  
 mrf.m: Gibbs Sampling of Ising Model for Image Denoising
+random_walk.m: Random Walk Using Monte-Carlo Randomized Algorithm
 
 Density Estimation:
 

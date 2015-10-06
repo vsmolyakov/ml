@@ -19,7 +19,10 @@ histn.m: N-dim histogram
 Dimensionality Reduction:
 
 lda: latent dirichlet allocation topic model comparing EM and variational inference  
-rand-proj.m: random projections
+rand-proj.m: random projections  
+
+Missing Data Imputation:  
+missing_data: imputation of incomplete data based on conditional Dirichlet distribution  
  
 ### Dependencies
 

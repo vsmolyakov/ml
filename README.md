@@ -24,6 +24,9 @@ missing_data: imputation of incomplete data based on conditional Dirichlet distr
 Sum Product:  
 sum_product: sum product algorithm applied to HMM for time-series data  
 
+Classifiers:  
+adaline_SGD.py: adaline SGD classifier  
+random_forest.py: random forest classifier  
  
 ### Dependencies
 

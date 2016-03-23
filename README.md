@@ -20,37 +20,37 @@ Gibbs Sampling
 In Gibbs sampling, the samples are drawn from a fully conditional distribution. The figure applies Gibbs sampling to image denoising using a binary Markov Random Field (MRF) model.
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/gibbs/figures/mean_gibbs.png" width = "200"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/gibbs/figures/mean_gibbs.png"/>
 </p>
 
 Gaussian Mixture Models
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/gmm/figures/gmm_clusters.png" width = "200"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/gmm/figures/gmm_clusters.png"/>
 </p>
 
 Latent Dirichlet Allocation
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/lda/figures/lda.png" width = "200"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/lda/figures/lda.png"/>
 </p>
 
 Stochastic Gradient Descent
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/sgd/figures/sgd_cost.png" width = "200"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/sgd/figures/sgd_cost.png"/>
 </p>
 
 Hidden Markov Models
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/hmm/figures/sp500.png" width = "200"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/hmm/figures/sp500.png"/>
 </p>
 
 Misc
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/misc/figures/density_est.png" width="300"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/misc/figures/density_est.png"/>
 </p>
 
 

@@ -50,7 +50,7 @@ Hidden Markov Models
 Misc
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/misc/figures/density_est.png?raw=true"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/misc/figures/density_est.png", width="50%" height="50%"/>
 </p>
 
 

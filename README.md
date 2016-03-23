@@ -1,32 +1,46 @@
 # ml
-This project is a collection of machine learning utilities aimed at understanding and getting intuition for different areas of machine learning.
+Machine Learning Algorithms
 
 ### Description
 
-Sampling Methods:  
-gibbs_gauss_script.m: A Gibbs Sampler for Multivariate Gaussian  
-imp_samp.m: Importance Sampler Example  
-box_muller.m: Sampling Method for Mutlivariate Gaussians  
-mrf.m: Gibbs Sampling of Ising Model for Image Denoising  
-random_walk.m: Random Walk Using Monte-Carlo Randomized Algorithm  
+Markov Chain Monte Carlo
 
-Density Estimation:  
-density_est.m: Kernel Density Estimator
-histn.m: N-dim histogram
+MCMC methods are used in sampling from high dimensional distributions by accepting or rejecting samples according to a Metropolis-Hastings (MH) ratio. The figure below illustrates MCMC-MH for a bimodal 2D Gaussian distribution.
 
-Dimensionality Reduction:  
-lda: latent dirichlet allocation topic model comparing EM and variational inference  
-rand-proj.m: random projections  
+<p align="center">
+<img src="https://github.com/vsmolyakov/ml/blob/master/mcmc/figures/mcmc_gaussmix2d.png?raw=true"/>
+</p>
 
-Missing Data Imputation:  
-missing_data: imputation of incomplete data based on conditional Dirichlet distribution  
+To maintain high acceptance ratio, the proposal distribution should closely match the target distribution. It's important to maintain ergodicity to guarantee that the accepted samples drawn from the proposal distribution converge to the target distribution. To speed up the exploration of the target distribution, the random walk proposal can be replaced with methods that use gradient information such as Hamiltonian Monte Carlo.
 
-Sum Product:  
-sum_product: sum product algorithm applied to HMM for time-series data  
+Reference: Andrieu C. et al, "An Introduction to MCMC for Machine Learning", 2003
 
-Classifiers:  
-adaline_SGD.py: adaline SGD classifier  
-random_forest.py: random forest classifier  
+Gibbs Sampling
+
+In Gibbs sampling, the samples are drawn from a fully conditional distribution. The figure applies Gibbs sampling to image denoising using a binary Markov Random Field (MRF) model.
+
+<p align="center">
+<img src="https://github.com/vsmolyakov/ml/blob/master/gibbs/figures/mean_gibbs.png?raw=true"/>
+</p>
+
+
+Gaussian Mixture Models
+
+
+Latent Dirichlet Allocation
+
+
+Stochastic Gradient Descent
+
+
+Hidden Markov Models
+
+
+Misc
+
+
+### References
+
  
 ### Dependencies
 

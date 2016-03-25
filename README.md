@@ -97,10 +97,10 @@ References:
 There are a number of fun demos in the misc category: estimating pi using monte carlo, randomized monte carlo for self-avoiding random walks, Gaussian kernel density estimator, importance and rejection sampling, random forrests and SGD neuron classifier.
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/misc/figures/misc_merged.png" width = "600"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/misc/figures/misc_merged.png"/>
 </p>
  
 ### Dependencies
 
-Matlab 2014a
+Matlab 2014a  
 Python 2.7

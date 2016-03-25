@@ -3,15 +3,16 @@ Machine Learning Algorithms
 
 ### Description
 
-Markov Chain Monte Carlo
+**Markov Chain Monte Carlo**
 
-MCMC methods are used in sampling from high dimensional distributions by accepting or rejecting samples according to a Metropolis-Hastings (MH) ratio. The figure below illustrates MCMC-MH for a bimodal 2D Gaussian distribution.
+MCMC methods are useful in sampling from high dimensional distributions by accepting or rejecting samples according to the Metropolis-Hastings (MH) ratio. The figure below shows MCMC-MH sampling results for Gaussian mixture and bayesian logistic regression.
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/mcmc/figures/mcmc_merged.png" width = "500" />
+<img src="https://github.com/vsmolyakov/ml/blob/master/mcmc/figures/mcmc_merged.png" width = "600" />
 </p>
 
-To maintain high acceptance ratio, the proposal distribution should closely match the target distribution. It's important to maintain ergodicity to guarantee that the accepted samples drawn from the proposal distribution converge to the target distribution. To speed up the exploration of the target distribution, the random walk proposal can be replaced with methods that use gradient information such as Hamiltonian Monte Carlo.
+We can see the histogram of accepted samples in the top right plot for the proposal shown in the left.
+Notice, that in order to maintain high acceptance ration, we would like the proposal distribution to closely match the target distribution. Furthermore, we need to ensure that our samples are drawn from an ergodic markov chain in order to guarantee convergence to the target distribution. While a random walk proposal is used here, to speed up the exploration of the target distribution, we can use other techniques, for example gradient information as used in the Hamiltonian Monte Carlo.
 
 Reference: Andrieu C. et al, "An Introduction to MCMC for Machine Learning", 2003
 

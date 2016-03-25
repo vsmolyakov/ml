@@ -13,8 +13,8 @@ MCMC methods are useful in sampling from high dimensional distributions by accep
 
 We can see the histogram of accepted samples in the top right plot for the proposal shown in the left. Notice, that in order to maintain high acceptance ration, we would like the proposal distribution to closely match the target distribution. Furthermore, we need to ensure that our samples are drawn from an ergodic markov chain in order to guarantee convergence to the target distribution. While a random walk proposal is used here, to speed up the exploration of the target distribution, we can use other techniques, for example gradient information as used in the Hamiltonian Monte Carlo.
 
-References: 
-*C. Andrieu et al, "An Introduction to MCMC for Machine Learning", 2003*
+References:  
+*C. Andrieu et al, "An Introduction to MCMC for Machine Learning", 2003*  
 *R. Neal, "MCMC Using Hamiltonian Dynamics", 2012*
 
 **Gibbs Sampling**
@@ -25,16 +25,16 @@ In Gibbs sampling, the samples are drawn from fully conditional distributions. T
 <img src="https://github.com/vsmolyakov/ml/blob/master/gibbs/figures/gibbs_merged.png" width = "600"/>
 </p>
 
-The figure on the left shows samples drawn from a 2D Gaussian by alternating x1 ~ p(x1|x2) and x2 ~ p(x2|x1). The more correlated x1 and x2 are the longer it takes to generate samples from the target distribution. The figure on the right shows the Gibbs sampler applied to a noisy binary image modeled as a grid graph, where each pixel is a node and the nodes are connected by weighted edges, where the weight is defined by edge potential psi(xs,xt) = exp(J xs xt), with xs and xt in {-1,+1}. By setting the coupling strength J, we can control the preference for neighboring pixels to have the same state. This can be applied to image denoising.
+The figure on the left shows samples drawn from a 2D Gaussian by alternating x1 ~ p(x1|x2) and x2 ~ p(x2|x1). The more correlated x1 and x2 are the longer it takes to generate samples from the target distribution. The figure on the right shows the Gibbs sampler applied to a noisy binary image modeled as a grid graph, where each pixel is a node and the nodes are connected by weighted edges, where the weight is defined by edge potential psi(xs,xt) = exp(J xs xt), with xs and xt in {-1,+1}. By setting the coupling strength J, we can control the preference for neighboring pixels to have the same state. This is used in image denoising.
 
 A gibbs sampler does not require the design of proposal distribution and the samples are always accepted. However, it can take a long time to converge and alternative methods such as parallel split-merge sampler or variational bayes methods are used to achieve faster approximate results.
 
-Reference:
+References:  
 *D. MacKay, "Information Theory, Inference and Learning Algorithms", 2003*
 
 **Gaussian Mixture Models**
 
-Gaussian Mixture Models (GMM) are very popular in approximating many real-world distributions. The figure below shows posterior clustering result on synthetic dataset using the Expectation-Maximization (EM) algorithm.
+Gaussian Mixture Models (GMM) are very popular in approximating many real-world distributions. The figure below shows a graphical model for a GMM and posterior clustering results on synthetic dataset and an image using the Expectation-Maximization (EM) algorithm.
 
 <p align="center">
 <img src="https://github.com/vsmolyakov/ml/blob/master/gmm/figures/gmm_merged.png"/>
@@ -45,17 +45,26 @@ EM algorithm is one of many ways of fitting a GMM. In the E-step, the cluster la
 A common modeling question with GMM is how to choose the number of clusters K? Bayesian non-parametric methods extend the GMM to infinite number of clusters using the Dirichlet Process.
 Small Variance Asymptotics (SVA) approximations can be used to derive fast algorithms for fitting Dirichlet Process Mixture Models and other bayesian non-parametric extensions.
 
-Reference:
+References:  
 *K. Murphy, "Machine Learning: A Probabilistic Perspective", 2012*
 
 **Latent Dirichlet Allocation**
 
+Latent Dirichlet Allocation (LDA) is a topic model that represents a collection of documents as a mixture of multinomials (topics). The inference task is to learn the topics and the mixing proportions. The figure below shows the LDA graphical model and the log-likelihood plot comparing EM algorithm with variational bayes. 
+
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/lda/figures/lda.png"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/lda/figures/lda_merged.png"/>
 </p>
 
-Reference:
-*D. Blei, A. Ng, M. Jordan, "Latent Dirichlet Allocation", 2003*
+Although both methods are susceptible to local optima, we can see that the EM algorithm achieves higher log-likelihood on synthetically generated data. LDA topic model associates each word xid with a topic represented by a label zid in {1,...,K}. A document is represented as a bag of words (sentence structure is not preserved) and only the word counts matter. Each document is associated with topic proportions theta_d that could be used to measure document similarity. The global topics represented as a multinomials are learned and shared across all documents. The hyper-parameters alpha and eta set our prior knowledge of topic mixtures and multinomials, e.g. from previous on-line training of the model.
+
+Topic models have been applied to massive datasets thanks to scalable inference algorithms. In particular, on-line variational methods that sub-sample the data into mini-batches such as Stochastic Variational Inference (SVI).
+
+In addition, there are a number of extensions to the basic LDA model such as the correlated topic model, dynamic topic model, supervised LDA and many others.
+
+References:  
+*D. Blei, A. Ng, M. Jordan, "Latent Dirichlet Allocation", JMLR 2003*
+*M. Hoffman, D. Blei, C. Wang, J. Paisley, "Stochastic Variational Inference", JMLR 2013*
 
 **Stochastic Gradient Descent**
 
@@ -63,17 +72,28 @@ Reference:
 <img src="https://github.com/vsmolyakov/ml/blob/master/sgd/figures/sgd_cost.png"/>
 </p>
 
+References:  
+
+
+
 **Hidden Markov Models**
 
 <p align="center">
 <img src="https://github.com/vsmolyakov/ml/blob/master/hmm/figures/sp500.png"/>
 </p>
 
+References:  
+
+
+
 **Misc**
 
 <p align="center">
 <img src="https://github.com/vsmolyakov/ml/blob/master/misc/figures/density_est.png"/>
 </p>
+
+References:  
+
 
 
 ### References

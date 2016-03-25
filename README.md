@@ -53,7 +53,7 @@ References:
 Latent Dirichlet Allocation (LDA) is a topic model that represents a collection of documents as a mixture of multinomials (topics). The inference task is to learn the topics and the mixing proportions. The figure below shows the LDA graphical model and the log-likelihood plot comparing EM algorithm with variational bayes. 
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/lda/figures/lda_merged.png"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/lda/figures/lda_merged.png" width = "500"/>
 </p>
 
 Although both methods are susceptible to local optima, we can see that the EM algorithm achieves higher log-likelihood on synthetically generated data. LDA topic model associates each word xid with a topic represented by a label zid in {1,...,K}. A document is represented as a bag of words (sentence structure is not preserved) and only the word counts matter. Each document is associated with topic proportions theta_d that could be used to measure document similarity. The global topics represented as a multinomials are learned and shared across all documents. The hyper-parameters alpha and eta set our prior knowledge of topic mixtures and multinomials, e.g. from previous on-line training of the model.
@@ -63,42 +63,45 @@ Topic models have been applied to massive datasets thanks to scalable inference 
 In addition, there are a number of extensions to the basic LDA model such as the correlated topic model, dynamic topic model, supervised LDA and many others.
 
 References:  
-*D. Blei, A. Ng, M. Jordan, "Latent Dirichlet Allocation", JMLR 2003*
+*D. Blei, A. Ng, M. Jordan, "Latent Dirichlet Allocation", JMLR 2003*  
 *M. Hoffman, D. Blei, C. Wang, J. Paisley, "Stochastic Variational Inference", JMLR 2013*
 
 **Stochastic Gradient Descent**
 
+Stochastic Gradient Descent (SGD) methods update parameters based on a sub-set of data. The figure below shows the objective function as a result of SGD updates for Bayesian Logistic Regression.
+
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/sgd/figures/sgd_cost.png"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/sgd/figures/sgd_cost.png" width = "500"/>
 </p>
 
+We can see that the gradient fluctuates and on average results in a decreasing objective. SGD updates are important in estimating parameters for massive data-sets. The idea of sub-sampling the data can be applied to scale both Monte Carlo and variational algorithms.
+
 References:  
-
-
+*R. Bekkerman et. al. "Scaling Up Machine Learning: Parallel and Distributed Approaches", 2011*  
 
 **Hidden Markov Models**
 
+Hidden Markov Models (HMM) learn model parameters for time-series data. The figure below shows the change in price of S&P500 over time.
+
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/hmm/figures/sp500.png"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/hmm/figures/sp500.png" width = "500"/>
 </p>
 
-References:  
+A forward-backward algorithm is used to learn the market state over time based on a Gaussian observation model. Bayesian non-parametric methods extend HMMs to include infinite number of states by allocating mass to a finite number of states according to an HDP prior.
 
+References:  
+*C. Bishop, "Pattern Recognition and Machine Learning", 2007*  
 
 
 **Misc**
 
+There are a number of fun demos in the misc category: estimating pi using monte carlo, randomized monte carlo for self-avoiding random walks, Gaussian kernel density estimator, importance and rejection sampling, random forrests and SGD neuron classifier.
+
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/misc/figures/density_est.png"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/misc/figures/misc_merged.png" width = "500"/>
 </p>
-
-References:  
-
-
-
-### References
-
  
 ### Dependencies
 
 Matlab 2014a
+Python 2.7

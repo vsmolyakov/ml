@@ -84,12 +84,12 @@ References:
 Hidden Markov Models (HMM) can be trained to discover latent states in time-series data. The figure below shows the HMM results trained with EM algorithm on Fitbit data: step count and heart rate.
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/hmm/figures/hmm_merged.png" width = "400"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/hmm/figures/hmm_merged.png"/>
 </p>
 
-By fixing the number of states to 2, we can learn the sleep and wake states. The model associates the sleep state with lower mean and variance of the heart-rate and naively predicts sleep during periods of inactivity.
+By fixing the number of states to 2, we can learn the sleep and wake states. The model associates the sleep state with lower mean and variance of the heart-rate and step counts. While it is correct at predicting sleep during the night time, it naively assigns sleep state to periods of inactivity during the day.
 
-The figure on the right shows the price of S&P500 over time. A forward-backward algorithm is used to learn the market state over time based on a Gaussian observation of the price.
+The figure on the right shows the price of S&P500 over time. A forward-backward algorithm is used to learn the market state over time based on a Gaussian price observation.
 
 In addition, Bayesian non-parametric methods extend HMMs to include infinite number of states by allocating mass to most probable states according to an HDP prior.
 

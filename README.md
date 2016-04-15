@@ -81,13 +81,17 @@ References:
 
 **Hidden Markov Models**
 
-Hidden Markov Models (HMM) learn model parameters for time-series data. The figure below shows the change in price of S&P500 over time.
+Hidden Markov Models (HMM) can be trained to discover latent states in time-series data. The figure below shows the HMM results trained with EM algorithm on Fitbit data: step count and heart rate.
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/hmm/figures/sp500.png" width = "400"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/hmm/figures/hmm_merged.png" width = "400"/>
 </p>
 
-A forward-backward algorithm is used to learn the market state over time based on a Gaussian observation model. Bayesian non-parametric methods extend HMMs to include infinite number of states by allocating mass to a finite number of states according to an HDP prior.
+By fixing the number of states to 2, we can learn the sleep and wake states. The model associates the sleep state with lower mean and variance of the heart-rate and naively predicts sleep during periods of inactivity.
+
+The figure on the right shows the price of S&P500 over time. A forward-backward algorithm is used to learn the market state over time based on a Gaussian observation of the price.
+
+In addition, Bayesian non-parametric methods extend HMMs to include infinite number of states by allocating mass to most probable states according to an HDP prior.
 
 References:  
 *C. Bishop, "Pattern Recognition and Machine Learning", 2007*  

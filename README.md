@@ -53,7 +53,7 @@ References:
 Latent Dirichlet Allocation (LDA) is a topic model that represents a collection of documents as a mixture of multinomials (topics). The inference task is to learn the topics and the mixing proportions. The figure below shows the LDA graphical model and the log-likelihood plot comparing EM algorithm with variational bayes. 
 
 <p align="center">
-<img src="https://github.com/vsmolyakov/ml/blob/master/lda/figures/lda_merged.png" width = "600"/>
+<img src="https://github.com/vsmolyakov/ml/blob/master/lda/figures/lda_merged.png"/>
 </p>
 
 Although both methods are susceptible to local optima, we can see that the EM algorithm achieves higher log-likelihood on synthetically generated data. LDA topic model associates each word xid with a topic represented by a label zid in {1,...,K}. A document is represented as a bag of words (sentence structure is not preserved) and only the word counts matter. Each document is associated with topic proportions theta_d that could be used to measure document similarity. The global topics represented as a multinomials are learned and shared across all documents. The hyper-parameters alpha and eta set our prior knowledge of topic mixtures and multinomials, e.g. from previous on-line training of the model.

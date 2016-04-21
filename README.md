@@ -50,17 +50,20 @@ References:
 
 **Latent Dirichlet Allocation**
 
-Latent Dirichlet Allocation (LDA) is a topic model that represents a collection of documents as a mixture of multinomials (topics). The inference task is to learn the topics and the mixing proportions. The figure below shows the LDA graphical model and the log-likelihood plot comparing EM algorithm with variational bayes. 
+Latent Dirichlet Allocation (LDA) is a topic model that represents each document as a mixture of topics, where a topic is a distribution over words. The objective is to learn the shared topic distributions and their proportions for each document. The figures below show the LDA graphical model, a comparison of EM and variational bayes algorithms on synthetic data and application of online VB to the 20 newsgroups dataset (11,314 docs).
+
 
 <p align="center">
 <img src="https://github.com/vsmolyakov/ml/blob/master/lda/figures/lda_merged.png"/>
 </p>
 
-Although both methods are susceptible to local optima, we can see that the EM algorithm achieves higher log-likelihood on synthetically generated data. LDA topic model associates each word xid with a topic represented by a label zid in {1,...,K}. A document is represented as a bag of words (sentence structure is not preserved) and only the word counts matter. Each document is associated with topic proportions theta_d that could be used to measure document similarity. The global topics represented as a multinomials are learned and shared across all documents. The hyper-parameters alpha and eta set our prior knowledge of topic mixtures and multinomials, e.g. from previous on-line training of the model.
+Although both methods are susceptible to local optima, we can see that the EM algorithm achieves higher log-likelihood on synthetically generated data. For real data, we plot the perplexity as a function of iterations and visualize 2 out of K=10 topics.
 
-Topic models have been applied to massive datasets thanks to scalable inference algorithms. In particular, on-line variational methods that sub-sample the data into mini-batches such as Stochastic Variational Inference (SVI).
+LDA assumes a bag of words model in which the words are exchangeable and as a result sentence structure is not preserved and only the word counts matter. The LDA topic model associates each word xid with a topic label zid in {1,...,K}. Each document is associated with topic proportions theta_d that could be used to measure document similarity. The topics represented by a Dirichlet distribution are shared across all documents. The hyper-parameters alpha and eta capture our prior knowledge of topic mixtures and multinomials, e.g. from past on-line training of the model.
 
-In addition, there are a number of extensions to the basic LDA model such as the correlated topic model, dynamic topic model, supervised LDA and many others.
+Topic models have been applied to massive datasets thanks to scalable inference algorithms. In particular, on-line variational methods that sub-sample data into mini-batches such as Stochastic Variational Inference (SVI).
+
+A number of extensions have been proposed for the original LDA model including correlated topic models, a dynamic topic model, supervised LDA and bayesian non-parametric models.
 
 References:  
 *D. Blei, A. Ng, M. Jordan, "Latent Dirichlet Allocation", JMLR 2003*  
